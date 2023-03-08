@@ -1,5 +1,6 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
+#include <cstddef>
 
 unsigned int faStr1(const char *str) {
     int count = 0;
