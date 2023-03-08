@@ -7,22 +7,26 @@ unsigned int faStr1(const char *str) {
     bool noNamber = true;
     int i = 0;
     while (str[i - 1] != NULL) {
-        if (str[i] != ' ' && inWord == false && (str[i] < '0' || str[i]>'9')) {
+        if (str[i] != ' ' && inWord == false &&
+            (str[i] < '0' || str[i]>'9')) {
             inWord = true;
-            //noNamber = true;
         }
-        if (str[i] >= '0' && str[i] <= '9' && inWord == false && noNamber == true) {
+        if (str[i] >= '0' && str[i] <= '9' &&
+            inWord == false && noNamber == true) {
             noNamber = false;
             inWord = true;
         }
-        if (str[i] >= '0' && str[i] <= '9' && inWord == true && noNamber == true) {
+        if (str[i] >= '0' && str[i] <= '9' &&
+            inWord == true && noNamber == true) {
             noNamber = false;
         }
-        if (str[i] == ' ' && inWord == true && noNamber == false) {
+        if (str[i] == ' ' && inWord == true &&
+            noNamber == false) {
             inWord = false;
             noNamber = true;
         }
-        if ((str[i] == ' ' || str[i] == NULL) && inWord == true && noNamber == true) {
+        if ((str[i] == ' ' || str[i] == NULL) &&
+            inWord == true && noNamber == true) {
             inWord = false;
             count++;
             noNamber = true;
@@ -35,28 +39,32 @@ unsigned int faStr1(const char *str) {
 }
 
 unsigned int faStr2(const char *str) {
-   int count = 0;
+    int count = 0;
     bool stSymbol = false;
     bool inWord = false;
     bool noGarb = true;
     //bool firstSymbol = true;
     int i = 0;
     while (str[i - 1] != NULL) {
-        if (inWord == true && stSymbol == true && noGarb == true && (str[i] == ' ' || str[i] == NULL)) {
+        if (inWord == true && stSymbol == true &&
+            noGarb == true && (str[i] == ' ' || str[i] == NULL)) {
             inWord = false;
             stSymbol = false;
             noGarb = true;
             count++;
         }
-        if (inWord == true && stSymbol == true && (str[i] < 'a' || str[i]>'z')) {
+        if (inWord == true && stSymbol == true &&
+            (str[i] < 'a' || str[i]>'z')) {
             noGarb = false;
         }
-        if (str[i] != ' ' && inWord == false && str[i] >= 'A' && str[i] <= 'Z') {
+        if (str[i] != ' ' && inWord == false &&
+            str[i] >= 'A' && str[i] <= 'Z') {
             inWord = true;
             stSymbol = true;
             //firstSymbol = false;
         }
-        if (str[i] != ' ' && inWord == false && (str[i] <= 'A' || str[i] >= 'Z')) {
+        if (str[i] != ' ' && inWord == false &&
+            (str[i] <= 'A' || str[i] >= 'Z')) {
             inWord = true;
             stSymbol = false;
         }
@@ -93,5 +101,5 @@ unsigned int faStr3(const char *str) {
         }
         i++;
     }
-    return round((double)countSymbol / (double)countWord);
+    return round(static_cast<double>(countSymbol) / static_cast<double>(countWord));
 }
