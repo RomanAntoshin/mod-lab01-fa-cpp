@@ -8,7 +8,7 @@ unsigned int faStr1(const char *str) {
     bool inWord = false;
     bool noNamber = true;
     int i = 0;
-    while (str[i - 1] != '\0') {
+    while (str[i] != '\0') {
         if (str[i] != ' ' && inWord == false &&
             (str[i] < '0' || str[i]>'9')) {
             inWord = true;
@@ -47,7 +47,7 @@ unsigned int faStr2(const char *str) {
     bool noGarb = true;
     //bool firstSymbol = true;
     int i = 0;
-    while (str[i - 1] != '\0') {
+    while (str[i] != '\0') {
         if (inWord == true && stSymbol == true &&
             noGarb == true && (str[i] == ' ' || str[i] == '\0')) {
             inWord = false;
