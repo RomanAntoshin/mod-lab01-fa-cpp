@@ -101,5 +101,6 @@ unsigned int faStr3(const char *str) {
         }
         i++;
     }
-    return round(static_cast<double>(countSymbol) / static_cast<double>(countWord));
+    return round(static_cast<double>(countSymbol) /
+                 static_cast<double>(countWord));
 }
