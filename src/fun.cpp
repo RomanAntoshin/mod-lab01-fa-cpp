@@ -7,7 +7,7 @@ unsigned int faStr1(const char *str) {
     bool inWord = false;
     bool noNamber = true;
     int i = 0;
-    while (str[i - 1] != NULL) {
+    while (str[i - 1] != '\0') {
         if (str[i] != ' ' && inWord == false &&
             (str[i] < '0' || str[i]>'9')) {
             inWord = true;
@@ -26,7 +26,7 @@ unsigned int faStr1(const char *str) {
             inWord = false;
             noNamber = true;
         }
-        if ((str[i] == ' ' || str[i] == NULL) &&
+        if ((str[i] == ' ' || str[i] == '\0') &&
             inWord == true && noNamber == true) {
             inWord = false;
             count++;
@@ -46,9 +46,9 @@ unsigned int faStr2(const char *str) {
     bool noGarb = true;
     //bool firstSymbol = true;
     int i = 0;
-    while (str[i - 1] != NULL) {
+    while (str[i - 1] != '\0') {
         if (inWord == true && stSymbol == true &&
-            noGarb == true && (str[i] == ' ' || str[i] == NULL)) {
+            noGarb == true && (str[i] == ' ' || str[i] == '\0')) {
             inWord = false;
             stSymbol = false;
             noGarb = true;
@@ -85,7 +85,7 @@ unsigned int faStr3(const char *str) {
     int countSymbol = 0;
     //double answer;
     bool inWord = false;
-    while (str[i] != NULL) {
+    while (str[i] != '\0') {
         if (str[i] != ' ' && inWord == false) {
             inWord = true;
             countWord++;
@@ -96,7 +96,7 @@ unsigned int faStr3(const char *str) {
         i++;
     }
     i = 0;
-    while (str[i] != NULL) {
+    while (str[i] != '\0') {
         if (str[i] != ' ') {
             countSymbol++;
         }
